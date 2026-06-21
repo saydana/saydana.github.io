@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saydana — Beauty Model Retouching</title>
+
+  <!-- Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+
+  <style>
+    @font-face {
+      font-family: "New Order";
+      src: url("fonts/NewOrder-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: "New Order";
+      src: url("fonts/NewOrder-Light.woff2") format("woff2");
+      font-weight: 300;
+      font-style: normal;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: #fff;
+      color: #111;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .page {
+      width: 100%;
+      min-height: 100vh;
+    }
+
+    /* Header */
+
+    header {
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 38px 32px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: "New Order", "Helvetica Neue", Arial, sans-serif;
+      font-size: 24px;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+
+    nav {
+      font-family: "New Order", "Helvetica Neue", Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 14px;
+      color: #777;
+      font-weight: 300;
+    }
+
+    nav a:hover {
+      color: #111;
+    }
+
+    .socials {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      font-size: 21px;
+      color: #888;
+    }
+
+    /* Hero */
+
+    .hero {
+      max-width: 1000px;
+      margin: 220px auto 0;
+      padding: 0 32px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: "New Order", "Helvetica Neue", Arial, sans-serif;
+      font-size: 52px;
+      line-height: 1.1;
+      font-weight: 300;
+      letter-spacing: -1.8px;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 18px;
+      line-height: 1.45;
+      color: #777;
+      font-weight: 300;
+    }
+
+    /* Project */
+
+    .project {
+      max-width: 1040px;
+      margin: 185px auto 90px;
+      padding: 0 32px;
+    }
+
+    .project-heading {
+      text-align: center;
+      margin-bottom: 34px;
+    }
+
+    .project-heading h2 {
+      font-family: "New Order", "Helvetica Neue", Arial, sans-serif;
+      font-size: 21px;
+      font-weight: 400;
+      letter-spacing: -0.3px;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+
+    .project-heading p {
+      font-size: 17px;
+      color: #777;
+      font-weight: 300;
+    }
+
+    /* Gallery */
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 30px;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      background: #eee;
+    }
+
+    .gallery-item img {
+      height: 100%;
+    }
+
+    .gallery-item:nth-child(1),
+    .gallery-item:nth-child(2) {
+      grid-column: span 6;
+      aspect-ratio: 1.34 / 1;
+    }
+
+    .gallery-item:nth-child(3) {
+      grid-column: span 4;
+      aspect-ratio: 0.77 / 1.15;
+    }
+
+    .gallery-item:nth-child(4) {
+      grid-column: span 8;
+      aspect-ratio: 1.72 / 1;
+    }
+
+    .gallery-item:nth-child(5),
+    .gallery-item:nth-child(6) {
+      grid-column: span 6;
+      aspect-ratio: 1.34 / 1;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 768px) {
+      header {
+        padding-top: 28px;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+      }
+
+      .hero {
+        margin-top: 120px;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .project {
+        margin-top: 120px;
+      }
+
+      .gallery {
+        gap: 20px;
+      }
+
+      .gallery-item:nth-child(n) {
+        grid-column: span 12;
+        aspect-ratio: 1.25 / 1;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header,
+      .hero,
+      .project {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      .logo {
+        font-size: 22px;
+      }
+
+      nav {
+        font-size: 13px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .project-heading h2 {
+        font-size: 18px;
+      }
+
+      .project-heading p {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <header>
+      <a href="#" class="logo">SAYDANA</a>
+
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Resume download</a>
+        <a href="#">Contact</a>
+
+        <div class="socials">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <h1>Beauty Model Retouching</h1>
+        <p>
+          I create visual content for beauty and lifestyle brands, including campaign banners,
+          e-commerce product pages, AI-generated product visuals, retouching, and localized
+          design for global markets.
+        </p>
+      </section>
+
+      <section class="project">
+        <div class="project-heading">
+          <h2>2025 Irina Shayk Campaign</h2>
+          <p>Call out some information that made this project special and worth showcasing.</p>
+        </div>
+
+        <div class="gallery">
+          <div class="gallery-item">
+            <img src="images/irina-01.jpg" alt="Beauty campaign portrait" />
+          </div>
+
+          <div class="gallery-item">
+            <img src="images/irina-02.jpg" alt="Beauty campaign serum shot" />
+          </div>
+
+          <div class="gallery-item">
+            <img src="images/irina-03.jpg" alt="Editorial campaign scene" />
+          </div>
+
+          <div class="gallery-item">
+            <img src="images/irina-04.jpg" alt="Warm light beauty portrait" />
+          </div>
+
+          <div class="gallery-item">
+            <img src="images/irina-05.jpg" alt="Yellow background beauty campaign" />
+          </div>
+
+          <div class="gallery-item">
+            <img src="images/irina-06.jpg" alt="Close-up lip product campaign" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+  </div>
+</body>
+</html>
